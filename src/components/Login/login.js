@@ -1,19 +1,29 @@
+import { useState } from "react";
+
 var Users = [
   {
     username: "Admin",
     email: "admin@gmail.com",
     password: "qwerty"
+  },
+  {
+    username: "User1",
+    email: "user1@gmail.com",
+    password: "12345"
   }
 ];
 
 export default function Login() {
-  const temp = { username: null, password: null };
+  const [loginData, setLoginData] = useState({
+    username: null,
+    password: null
+  });
   const handleUsername = (event) => {
-    temp.username = event.target.value;
+    loginData.username = event.target.value;
   };
 
   const handlePassword = (event) => {
-    temp.password = event.target.value;
+    loginData.password = event.target.value;
   };
   return (
     <>
@@ -26,10 +36,13 @@ export default function Login() {
         onClick={() => {
           for (let i = 0; i < Users.length; i++) {
             if (
-              Users[i].username === temp.username &&
-              Users[i].password === temp.password
+              Users[i].username == loginData.username &&
+              Users[i].password == loginData.password
             ) {
-              console.log(temp);
+              setLoginData(Users[i].username, Users[i].password);
+              console.log(loginData);
+              console.log(Users[i]);
+              break;
             }
           }
         }}
