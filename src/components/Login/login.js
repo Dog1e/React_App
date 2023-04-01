@@ -1,17 +1,5 @@
+import Users from "../../data/Users";
 import { useState } from "react";
-
-var Users = [
-  {
-    username: "Admin",
-    email: "admin@gmail.com",
-    password: "qwerty"
-  },
-  {
-    username: "User1",
-    email: "user1@gmail.com",
-    password: "12345"
-  }
-];
 
 export default function Login() {
   const [loginData, setLoginData] = useState({
@@ -49,6 +37,7 @@ export default function Login() {
       >
         Zaloguj
       </button>
+      <button>Don't have an account? Register here.</button>
     </>
   );
 }
