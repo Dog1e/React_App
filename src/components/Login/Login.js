@@ -1,5 +1,4 @@
 import Users from '../../data/Users';
-import LoggedUser from '../../data/LoggedUser';
 import { useState } from 'react';
 
 export default function Login(props) {
@@ -12,6 +11,12 @@ export default function Login(props) {
     email: null,
     password: null
   });
+
+  const handleStorage = () => {
+    if (loggedUser.id != null) {
+      localStorage.setItem('loggedUser', JSON.stringify(loggedUser));
+    }
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -26,7 +31,6 @@ export default function Login(props) {
         break;
       }
     }
-    console.log(loggedUser);
   };
   return (
     <>
@@ -45,11 +49,16 @@ export default function Login(props) {
           type="password"
           placeholder="**********"
         />
-        <button type="submit">Login</button>
+        <input type="submit" onClick={handleStorage()} value="Login"></input>
       </form>
       <button onClick={() => props.onFormSwitch('register')}>
         Don't have account? Register here.
       </button>
+      <button
+        onClick={() =>
+          console.log(JSON.parse(localStorage.getItem('loggedUser')))
+        }
+      ></button>
     </>
   );
 }
