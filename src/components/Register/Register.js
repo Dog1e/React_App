@@ -8,6 +8,24 @@ export default function Register(props) {
 
   const handleRegister = (e) => {
     e.preventDefault();
+    let isValid = true;
+    for (let i = 0; i < Users.length; i++) {
+      if (Users[i].username === username || Users[i].email === email) {
+        isValid = false;
+        break;
+      }
+    }
+    if (isValid) {
+      Users.push({
+        id: Users.length,
+        username: username,
+        email: email,
+        password: password
+      });
+      props.onFormSwitch('login');
+    } else {
+      alert('Użytkownik o podanych danych już istnieje');
+    }
   };
 
   return (
@@ -39,6 +57,7 @@ export default function Register(props) {
       <button onClick={() => props.onFormSwitch('login')}>
         Already have an account? Login here.
       </button>
+      <button onClick={() => console.log(Users)}>ShowUsers</button>
     </>
   );
 }

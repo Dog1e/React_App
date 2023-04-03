@@ -21,13 +21,14 @@ export default function Login(props) {
   const handleLogin = (e) => {
     e.preventDefault();
     for (let i = 0; i < Users.length; i++) {
-      if (Users[i].username == username && Users[i].password == password) {
+      if (Users[i].username === username && Users[i].password === password) {
         setLoggedUser({
           id: Users[i].id,
           username: Users[i].username,
           email: Users[i].email,
           password: Users[i].password
         });
+        props.onFormSwitch('logged');
         break;
       }
     }
@@ -58,7 +59,9 @@ export default function Login(props) {
         onClick={() =>
           console.log(JSON.parse(localStorage.getItem('loggedUser')))
         }
-      ></button>
+      >
+        ShowLocalStorage
+      </button>
     </>
   );
 }
