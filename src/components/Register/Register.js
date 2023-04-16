@@ -57,7 +57,7 @@ export default function Register(props) {
       <button onClick={() => props.onFormSwitch('login')}>
         Already have an account? Login here.
       </button>
-      <button onClick={() => console.log(Users)}>ShowUsers</button>
+      {/* <button onClick={() => console.log(Users)}>ShowUsers</button> */}
     </>
   );
 }
