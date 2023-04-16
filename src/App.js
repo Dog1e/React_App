@@ -27,5 +27,16 @@ export default function App() {
     }
   };
 
-  return <div className="App">{content()}</div>;
+  return (
+    <div className="App">
+      {content()}
+      {/* <button
+        onClick={() =>
+          console.log(JSON.parse(localStorage.getItem('loggedUser')))
+        }
+      >
+        ShowLocalStorage
+      </button> */}
+    </div>
+  );
 }

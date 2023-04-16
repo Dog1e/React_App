@@ -12,12 +12,6 @@ export default function Login(props) {
     password: null
   });
 
-  const handleStorage = () => {
-    if (loggedUser.id != null) {
-      localStorage.setItem('loggedUser', JSON.stringify(loggedUser));
-    }
-  };
-
   const handleLogin = (e) => {
     e.preventDefault();
     for (let i = 0; i < Users.length; i++) {
@@ -28,6 +22,15 @@ export default function Login(props) {
           email: Users[i].email,
           password: Users[i].password
         });
+        localStorage.setItem(
+          'loggedUser',
+          JSON.stringify({
+            id: Users[i].id,
+            username: Users[i].username,
+            email: Users[i].email,
+            password: Users[i].password
+          })
+        );
         props.onFormSwitch('logged');
         break;
       }
@@ -50,17 +53,10 @@ export default function Login(props) {
           type="password"
           placeholder="**********"
         />
-        <input type="submit" onClick={handleStorage()} value="Login"></input>
+        <input type="submit" value="Login"></input>
       </form>
       <button onClick={() => props.onFormSwitch('register')}>
         Don't have account? Register here.
-      </button>
-      <button
-        onClick={() =>
-          console.log(JSON.parse(localStorage.getItem('loggedUser')))
-        }
-      >
-        ShowLocalStorage
       </button>
     </>
   );
