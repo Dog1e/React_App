@@ -25,7 +25,12 @@ export default function App() {
     } else if (currentForm === 'register') {
       return <Register onFormSwitch={toggleForm} />;
     } else if (currentForm === 'logged') {
-      return;
+      return (
+        <>
+          <Api />
+          <Map />
+        </>
+      );
     }
   };
 
@@ -39,8 +44,6 @@ export default function App() {
       >
         ShowLocalStorage
       </button> */}
-      <Api />
-      <Map />
     </div>
   );
 }

@@ -13,7 +13,12 @@ import { Icon } from 'leaflet';
 
 export default function Map() {
   const [location, setLocation] = useState({ lat: 0, lng: 0 });
-  const user = JSON.parse(localStorage.getItem('loggedUser'));
+  let user;
+  if (JSON.parse(localStorage.getItem('loggedUser')) != null) {
+    user = JSON.parse(localStorage.getItem('loggedUser'));
+  } else {
+    user = 0;
+  }
   const [UserLocations, setUserLocations] = useState(Users[user].locations);
 
   const FindLocation = () => {
