@@ -20,7 +20,8 @@ export default function Register(props) {
         id: Users.length,
         username: username,
         email: email,
-        password: password
+        password: password,
+        locations: []
       });
       props.onFormSwitch('login');
     } else {

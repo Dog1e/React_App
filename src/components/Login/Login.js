@@ -9,7 +9,8 @@ export default function Login(props) {
     id: null,
     username: null,
     email: null,
-    password: null
+    password: null,
+    locations: null
   });
 
   const handleLogin = (e) => {
@@ -20,17 +21,10 @@ export default function Login(props) {
           id: Users[i].id,
           username: Users[i].username,
           email: Users[i].email,
-          password: Users[i].password
+          password: Users[i].password,
+          locations: Users[i].locations
         });
-        localStorage.setItem(
-          'loggedUser',
-          JSON.stringify({
-            id: Users[i].id,
-            username: Users[i].username,
-            email: Users[i].email,
-            password: Users[i].password
-          })
-        );
+        localStorage.setItem('loggedUser', JSON.stringify(i));
         props.onFormSwitch('logged');
         break;
       }

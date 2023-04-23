@@ -2,6 +2,8 @@ import './styles.css';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Api from './components/Api/Api';
+import Map from './components/Map/Map';
+
 import { useState } from 'react';
 
 export default function App() {
@@ -38,6 +40,7 @@ export default function App() {
         ShowLocalStorage
       </button> */}
       <Api />
+      <Map />
     </div>
   );
 }
