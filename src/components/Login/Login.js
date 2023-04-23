@@ -1,7 +1,6 @@
 import Users from '../../data/Users';
 import { useState } from 'react';
 import '../../Styles/Main.css';
-import '../../Styles/Login.css';
 
 export default function Login(props) {
   const [username, setUsername] = useState('');
@@ -34,9 +33,10 @@ export default function Login(props) {
   };
   return (
     <div className="LoginContainer">
-      <form onSubmit={handleLogin}>
+      <form className="LoginForm" onSubmit={handleLogin}>
         Username
         <input
+          className="LoginText"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           type="text"
@@ -44,14 +44,18 @@ export default function Login(props) {
         />
         Password
         <input
+          className="LoginText"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           placeholder="**********"
         />
-        <input type="submit" value="Login"></input>
+        <input className="LoginBtn" type="submit" value="Login"></input>
       </form>
-      <button onClick={() => props.onFormSwitch('register')}>
+      <button
+        className="RegisterBtn"
+        onClick={() => props.onFormSwitch('register')}
+      >
         Don't have account? Register here.
       </button>
     </div>

@@ -91,25 +91,35 @@ export default function Map() {
         <FindLocation />
       </MapContainer>
       <h2>Add selected location to your checkpoints</h2>
-      <form onSubmit={handleForm}>
+      <form className="LoginForm" onSubmit={handleForm}>
         Name
-        <input name="name" type="text" />
+        <input className="LoginText" name="name" type="text" />
         Latitude:
-        <input name="lat" type="text" value={location.lat} disabled />
+        <input
+          className="LoginText"
+          name="lat"
+          type="text"
+          value={location.lat}
+          disabled
+        />
         Longitude:
-        <input type="lng" value={location.lng} disabled />
-        <button type="submit">Add checkpoint</button>
+        <input className="LoginText" type="lng" value={location.lng} disabled />
+        <button className="RegisterBtn" type="submit">
+          Add checkpoint
+        </button>
       </form>
       {UserLocations.map((e) => {
         return (
-          <p>
+          <p className="Name">
             {e.name}
             <input
+              className="LoginBtn"
               type="button"
               value="Show Chekpoint"
               onClick={() => setLocation({ lat: e.lat, lng: e.lng })}
             />
             <input
+              className="LoginBtn"
               type="button"
               value="Delete Chekpoint"
               onClick={() => {

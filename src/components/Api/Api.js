@@ -67,15 +67,18 @@ export default function Api() {
   }
 
   return (
-    <>
-      <form onSubmit={handleForm}>
+    <div>
+      <form className="LoginForm" onSubmit={handleForm}>
         Latitude
-        <input name="latitude" type="text" />
+        <input className="LoginText" name="latitude" type="text" />
         Longitude
-        <input name="longitude" type="text" />
-        <button type="submit">Submit</button>
+        <input className="LoginText" name="longitude" type="text" />
+        <button className="RegisterBtn" type="submit">
+          Submit
+        </button>
       </form>
       <input
+        className="LoginBtn"
         type="button"
         value="Check weather for selected location"
         onClick={getData}
@@ -104,6 +107,6 @@ export default function Api() {
         </Marker>
         <LocationMarker />
       </MapContainer>
-    </>
+    </div>
   );
 }

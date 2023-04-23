@@ -30,10 +30,11 @@ export default function Register(props) {
   };
 
   return (
-    <>
-      <form onSubmit={handleRegister}>
+    <div className="LoginContainer">
+      <form className="LoginForm" onSubmit={handleRegister}>
         Username
         <input
+          className="LoginText"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           type="text"
@@ -41,6 +42,7 @@ export default function Register(props) {
         />
         Email
         <input
+          className="LoginText"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="text"
@@ -48,17 +50,23 @@ export default function Register(props) {
         />
         Password
         <input
+          className="LoginText"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           placeholder="**********"
         />
-        <button type="submit">Register</button>
+        <button className="LoginBtn" type="submit">
+          Register
+        </button>
       </form>
-      <button onClick={() => props.onFormSwitch('login')}>
+      <button
+        className="RegisterBtn"
+        onClick={() => props.onFormSwitch('login')}
+      >
         Already have an account? Login here.
       </button>
       {/* <button onClick={() => console.log(Users)}>ShowUsers</button> */}
-    </>
+    </div>
   );
 }
