@@ -1,5 +1,7 @@
 import Users from '../../data/Users';
 import { useState } from 'react';
+import '../../Styles/Main.css';
+import '../../Styles/Login.css';
 
 export default function Login(props) {
   const [username, setUsername] = useState('');
@@ -31,7 +33,7 @@ export default function Login(props) {
     }
   };
   return (
-    <>
+    <div className="LoginContainer">
       <form onSubmit={handleLogin}>
         Username
         <input
@@ -52,6 +54,6 @@ export default function Login(props) {
       <button onClick={() => props.onFormSwitch('register')}>
         Don't have account? Register here.
       </button>
-    </>
+    </div>
   );
 }

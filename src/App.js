@@ -1,4 +1,5 @@
 import './styles.css';
+import './Styles/Main.css';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Api from './components/Api/Api';
