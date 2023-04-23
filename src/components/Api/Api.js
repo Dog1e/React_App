@@ -30,8 +30,8 @@ export default function Api() {
     });
   };
 
-  const [latitude, setLatitude] = useState(52.2297);
-  const [longitude, setLongitude] = useState(21.0122);
+  const [latitude, setLatitude] = useState(50.29874392643405);
+  const [longitude, setLongitude] = useState(18.694894909858707);
 
   function handleForm(e) {
     e.preventDefault();

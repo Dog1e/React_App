@@ -46,6 +46,13 @@ export default function Map() {
 
     setUserLocations([...UserLocations, locationU]);
     console.log(UserLocations);
+
+    Users[user].locations.push({
+      id: UserLocations.length,
+      name: FormJson.name,
+      lat: location.lat,
+      lng: location.lng
+    });
   }
 
   const displayLocations = () => {
