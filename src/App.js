@@ -1,8 +1,8 @@
 import './styles.css';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import Api from './components/Api/Api';
 import { useState } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 export default function App() {
   const [currentForm, setCurrentForm] = useState('login');
@@ -37,6 +37,7 @@ export default function App() {
       >
         ShowLocalStorage
       </button> */}
+      <Api />
     </div>
   );
 }
