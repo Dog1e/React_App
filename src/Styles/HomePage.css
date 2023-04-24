@@ -22,7 +22,6 @@
 }
 .Section1__Img {
   flex-basis: 50%;
-  background-image: url('../miasto.png');
 }
 .RegisterBtn2 {
   background-color: #0d8dd6;
@@ -47,6 +46,8 @@
   background-color: #27292b;
   margin: 2em;
   border-radius: 15%;
+  flex-basis: 30%;
+  height: 30em;
 }
 .Section2__Headline {
   margin: 0.3em;

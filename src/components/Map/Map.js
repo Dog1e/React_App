@@ -108,6 +108,7 @@ export default function Map() {
           Add checkpoint
         </button>
       </form>
+      <h2>Your checkpoints</h2>
       {UserLocations.map((e) => {
         return (
           <p className="Name">

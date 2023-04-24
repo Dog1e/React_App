@@ -15,6 +15,10 @@
   display: inline-block;
   font-size: 16px;
 }
+.LoginBtn:hover {
+  background-color: #383a3c;
+  cursor: pointer;
+}
 .RegisterBtn {
   background-color: #0d8dd6;
   border: none;
@@ -26,4 +30,12 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+.RegisterBtn:hover {
+  background-color: #1e9ee7;
+  cursor: pointer;
+}
+.RegisterBtn2:hover {
+  background-color: #1e9ee7;
+  cursor: pointer;
 }

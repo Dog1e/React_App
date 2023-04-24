@@ -1,5 +1,6 @@
 import '../../Styles/Main.css';
 import '../../Styles/HomePage.css';
+import miasto from '../../Styles/miasto.png';
 
 const HomeSection = (props) => {
   return (
@@ -17,7 +18,10 @@ const HomeSection = (props) => {
             Register
           </button>
         </div>
-        <div className="Section1__Img"></div>
+        <div
+          className="Section1__Img"
+          style={{ backgroundImage: `url(${miasto})` }}
+        ></div>
       </section>
       <section className="Section2">
         <div className="Section2__Box">
@@ -27,15 +31,16 @@ const HomeSection = (props) => {
           </p>
         </div>
         <div className="Section2__Box">
-          <h2 className="Section2__Headline">Set</h2>
+          <h2 className="Section2__Headline">Check</h2>
           <p className="Section2__text">
-            Set up a checkpoint wherever in the world!
+            Check weather conditions of any place you like!
           </p>
         </div>
         <div className="Section2__Box">
-          <h2 className="Section2__Headline">Set</h2>
+          <h2 className="Section2__Headline">Mark</h2>
           <p className="Section2__text">
-            Set up a checkpoint wherever in the world!
+            Get access to as many checkpoints as you like with our account
+            system
           </p>
         </div>
       </section>
