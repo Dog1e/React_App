@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import {
   MapContainer,
@@ -14,6 +14,8 @@ export default function Api() {
   const [weather, setWeather] = useState(
     <div>Select latitude and longitude</div>
   );
+
+  const [map, setMap] = useState(null);
 
   const getData = () => {
     fetch(
@@ -41,6 +43,7 @@ export default function Api() {
     const formJson = Object.fromEntries(formData.entries());
     setLatitude(formJson.latitude);
     setLongitude(formJson.longitude);
+    if (map) map.flyTo([formJson.latitude, formJson.longitude], map.getZoom());
   }
 
   function LocationMarker() {
@@ -90,6 +93,7 @@ export default function Api() {
         center={[latitude, longitude]}
         zoom={10}
         scrollWheelZoom={true}
+        ref={setMap}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -21,6 +21,8 @@ export default function Map() {
   }
   const [UserLocations, setUserLocations] = useState(Users[user].locations);
 
+  const [map, setMap] = useState(null);
+
   const FindLocation = () => {
     const map = useMapEvents({
       click(e) {
@@ -73,7 +75,12 @@ export default function Map() {
   return (
     <>
       <h1>Select location</h1>
-      <MapContainer center={[0, 0]} zoom={2} scrollWheelZoom={true}>
+      <MapContainer
+        center={[0, 0]}
+        zoom={2}
+        scrollWheelZoom={true}
+        ref={setMap}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -118,6 +125,7 @@ export default function Map() {
               type="button"
               value="Show Chekpoint"
               onClick={() => setLocation({ lat: e.lat, lng: e.lng })}
+              onClickCapture={() => map.flyTo([e.lat, e.lng], map.getZoom())}
             />
             <input
               className="LoginBtn"
