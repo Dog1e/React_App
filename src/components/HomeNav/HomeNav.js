@@ -1,12 +1,13 @@
 import '../../Styles/Main.css';
 import '../../Styles/Navigation.css';
+import logo from '../HomeNav/checkLogo.png';
 
 const HomeNav = (props) => {
   return (
     <>
       <nav className="NavBar">
         <div>
-          <img src="checkLogo.png" alt="logo"></img>
+          <img src={logo} alt="logo"></img>
         </div>
         <div>
           <button
