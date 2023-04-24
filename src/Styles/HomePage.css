@@ -47,7 +47,9 @@
   margin: 2em;
   border-radius: 15%;
   flex-basis: 30%;
-  height: 30em;
+  height: 21rem;
+  display: flex;
+  flex-direction: column;
 }
 .Section2__Headline {
   margin: 0.3em;
